@@ -9,7 +9,7 @@ environment {
     agent  { label 'tom' }
             steps {
                 sh 'sudo rm -rf welcome-to-devops-war'
-	sh 'git clone https://github.com/akshayvdes/welcome-to-devops-war.git'	
+	sh 'git clone https://github.com/NetravatiH/welcome-to-devops-war.git'	
               }
         }
 	 stage('build') {
@@ -41,8 +41,8 @@ agent  { label 'tom' }
  agent  { label 'tom' }
 
 			steps {
-			    sh 'docker tag tomcat:1.0 akshayvdes/tomcatnew_ak:1.3'
-				sh 'docker push akshayvdes/tomcatnew_ak:1.3'
+			    sh 'docker tag tomcat:1.0 netra2424/tomcatnew_ak:1.3'
+				sh 'docker push netra2424/tomcatnew_ak:1.3'
 			}
 		}
 
@@ -50,7 +50,7 @@ agent  { label 'tom' }
     agent { label 'deplo' }
         steps{
             sh 'docker rm -f mytomcat'
-            sh 'docker run -d --name mytomcat -p 7100:8080 akshayvdes/tomcatnew_ak:1.3'
+            sh 'docker run -d --name mytomcat -p 7100:8080 netra2424/tomcatnew_ak:1.3'
         }
     }
     }
